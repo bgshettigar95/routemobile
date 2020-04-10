@@ -1,0 +1,19 @@
+<div class="panel panel-default" *ngFor="let user of users_list">
+    <div class="panel-body">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-lg-4 user-block">
+                    <img src="{{user.avatar}}" alt="{{user.avatar}}" class="avatar">
+                </div>
+                <div class="col-md-8 col-lg-7 user-block">
+                    <h4>{{user.first_name}} {{user.last_name}}</h4>
+                    <h5>{{user.email}}</h5>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<pagination [totalItems]="total_items" [maxSize]="total_pages" (pageChanged)="loadPage($event)"></pagination>
